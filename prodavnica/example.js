@@ -19,5 +19,22 @@ let tabela = document.querySelector("#artikli")
 
 for (let artikal of artikli){
     let tr = document.createElement("tr")
-    
+
+    let id = document.createElement("td")
+    let naziv = document.createElement("td")
+    let cena = document.createElement("td")
+    let dostupnost = document.createElement("td")
+
+    id.textContent = artikal.broj
+    naziv.textContent = artikal.naziv
+    cena.textContent = artikal.cena
+    dostupnost.textContent = artikal.dostupan
+
+    tr.appendChild(id)
+    tr.appendChild(naziv)
+    tr.appendChild(cena)
+    tr.appendChild(dostupnost)
+
+    tabela.appendChild(tr)
+
 }
