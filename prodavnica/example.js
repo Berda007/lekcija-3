@@ -1,3 +1,5 @@
+'use strict'
+
 class Artikal {
     constructor(broj, naziv, cena, dostupan){
         this.broj=broj
@@ -12,3 +14,10 @@ const TV = new Artikal(2, "TV",650, false)
 const mis = new Artikal(3,"mis",20, true)
 
 const artikli = [monitor, TV, mis]
+
+let tabela = document.querySelector("#artikli") 
+
+for (let artikal of artikli){
+    let tr = document.createElement("tr")
+    
+}
