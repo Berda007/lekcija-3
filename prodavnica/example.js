@@ -10,3 +10,5 @@ class Artikal {
 const monitor = new Artikal(1, "monitor", 165, true)
 const TV = new Artikal(2, "TV",650, false)
 const mis = new Artikal(3,"mis",20, true)
+
+const artikli = [monitor, TV, mis]
