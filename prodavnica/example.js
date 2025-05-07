@@ -16,6 +16,15 @@ const mis = new Artikal(3,"mis",20, true)
 const artikli = [monitor, TV, mis]
 
 let tabela = document.querySelector("#artikli") 
+tabela.style.border =  '1px solid black'
+tabela.style.borderCollapse = "collapse"
+
+let hederTabele = document.querySelectorAll("th")
+for (let th of hederTabele) {
+    th.style.border = "1px solid black"
+    th.style.textAlign = "center"
+    th.style.fontWeight = "normal"
+}
 
 for (let artikal of artikli){
     let tr = document.createElement("tr")
@@ -25,10 +34,23 @@ for (let artikal of artikli){
     let cena = document.createElement("td")
     let dostupnost = document.createElement("td")
 
+    let nizCelija = [id, naziv, cena, dostupnost]
+
+    for (let td of nizCelija ){
+        td.style.border = "1px solid black"
+        td.style.textAlign = "center"
+    }
+    
+
     id.textContent = artikal.broj
     naziv.textContent = artikal.naziv
     cena.textContent = artikal.cena
-    dostupnost.textContent = artikal.dostupan
+    if (artikal.dostupan){
+        dostupnost.textContent = "DA"
+    } else {
+        dostupnost.textContent = "NE"
+        tr.style.backgroundColor = "lightcoral"
+    }
 
     tr.appendChild(id)
     tr.appendChild(naziv)
